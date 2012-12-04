@@ -14,6 +14,6 @@ var app = express()
         return res.end(JSON.stringify({ads: arr}));
       });
     });
-  }).listen(3000);
+  }).listen(process.env.PORT || 3000);
 
 
