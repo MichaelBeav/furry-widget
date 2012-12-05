@@ -18,20 +18,13 @@ $(function () {
 
 
   function getAds(callback) {
-    return $.ajax('/api/ads')
+    var queryParams = window.url
+    return $.ajax('/api/ads' + window.location.search)
       .success(function (data) {
         return callback(null, data);
       })
       .error(function (err) {
         return callback(err);
       });
-    return callback(null, {
-      "ads" : [{
-        "picture": "https://www.google.ru/images/srpr/logo3w.png",
-        "description": "Ad1 description."
-      }, {
-        "picture": "https://www.google.ru/images/srpr/logo3w.png",
-        "description": "Ad2 description."
-      }]});
   }
 });
