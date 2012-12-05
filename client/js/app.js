@@ -9,10 +9,12 @@ $(function () {
     });
     
     // slidejs
-    $('div.slides').slides({
+    var slides = $('div.slides').slides({
       play: 4000,
+      preload: true,
       pagination: false,
-      generatePagination: false
+      generatePagination: false,
+      hoverPause: true
     });
   });
 
